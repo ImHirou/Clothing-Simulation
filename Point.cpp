@@ -16,7 +16,6 @@ void Point::pin() { isPinned = true; }
 
 void Point::update(float deltaTime, float drag, const sf::Vector2f acceleration, float elasticity, sf::RenderWindow* window, int cursorSize, sf::Vector2f& mousePrevPos) {
     sf::Vector2f mousePos = sf::Vector2f(sf::Mouse().getPosition(*window).x, sf::Mouse().getPosition(*window).y);
-    std::cout << mousePrevPos.x << " " << mousePrevPos.y << "\n";
     sf::Vector2f cursorToPosDir = pos - mousePos;
     float cursorToPosDist = sqrtf(cursorToPosDir.x * cursorToPosDir.x + cursorToPosDir.y * cursorToPosDir.y);
     isSelected = cursorToPosDist < cursorSize;

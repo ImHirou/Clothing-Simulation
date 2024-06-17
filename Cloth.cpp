@@ -35,11 +35,12 @@ Cloth::Cloth(int width, int height, int spacing, int startX, int startY) {
     }
 }
 
-void Cloth::update(sf::RenderWindow *window, float deltaTime, sf::Vector2f& mousePrevPos) {
+void Cloth::update(sf::RenderWindow *window, float deltaTime, sf::Vector2f& mousePrevPos, int cursorSize) {
+    if(mousePrevPos.x < 0 || mousePrevPos.y < 0 || mousePrevPos.x > screenWidth || mousePrevPos.y > screenHeight) return;
     for (int i = 0; i < points.size(); i++)
     {
         Point* p = points[i];
-        p->update(deltaTime, drag, gravity, elasticity, window, 20, mousePrevPos);
+        p->update(deltaTime, drag, gravity, elasticity, window, cursorSize, mousePrevPos);
     };
 
     for (int i = 0; i < sticks.size(); i++)

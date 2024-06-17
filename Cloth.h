@@ -20,7 +20,7 @@ public:
     Cloth(int width, int height, int spacing, int startX, int startY);
     ~Cloth();
 
-    void update(sf::RenderWindow* window, float deltaTime, sf::Vector2f& mousePrevPos);
+    void update(sf::RenderWindow* window, float deltaTime, sf::Vector2f& mousePrevPos, int cursorSize);
     void draw(sf::RenderWindow* window);
 
 };
